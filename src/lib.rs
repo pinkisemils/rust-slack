@@ -1,4 +1,4 @@
-#![deny(missing_docs, missing_debug_implementations, trivial_casts, trivial_numeric_casts,
+#![deny(missing_debug_implementations, trivial_casts, trivial_numeric_casts,
        unsafe_code, unused_import_braces, unused_qualifications, unused_results)]
 #![cfg_attr(test, deny(warnings))]
 #![feature(conservative_impl_trait)]
@@ -32,7 +32,7 @@ pub use error::{Error, Result};
 #[macro_use]
 mod macros;
 mod helper;
-mod error;
+pub mod error;
 mod hex;
 mod payload;
 mod attachment;
