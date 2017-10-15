@@ -1,10 +1,12 @@
 #![deny(missing_docs, missing_debug_implementations, trivial_casts, trivial_numeric_casts,
-       unsafe_code, unstable_features, unused_import_braces, unused_qualifications, unused_results)]
+       unsafe_code, unused_import_braces, unused_qualifications, unused_results)]
 #![cfg_attr(test, deny(warnings))]
+#![feature(conservative_impl_trait)]
 
 //! Library to send messages to slack rooms
 //! supports entire messaging API, including attachments and fields
 //! also support for built-in colors as well as any hex colors
+
 
 extern crate reqwest;
 
@@ -17,6 +19,9 @@ extern crate serde;
 extern crate serde_derive;
 extern crate serde_json;
 extern crate url_serde;
+
+extern crate futures;
+extern crate tokio_core;
 
 pub use slack::{Slack, SlackLink, SlackText, SlackTextContent, SlackTime};
 pub use payload::{Parse, Payload, PayloadBuilder};
